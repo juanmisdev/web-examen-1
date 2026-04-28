@@ -1,0 +1,140 @@
+.detalle-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.detalle-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  background: #fafafa;
+}
+
+.detalle-header h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.btn-cerrar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #9ca3af;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1;
+}
+
+.btn-cerrar:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.detalle-body {
+  padding: 1.5rem 1.25rem;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-grande {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+}
+
+.tipo-badge {
+  background: #eef2ff;
+  color: #6366f1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.tipo-badge.admin {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.nombre {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.id-usuario {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.campo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  gap: 0.5rem;
+}
+
+.campo:last-child {
+  border-bottom: none;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 0.82rem;
+  color: #6b7280;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.valor {
+  font-size: 0.9rem;
+  color: #111827;
+  font-weight: 600;
+}
+
+.link-github {
+  font-size: 0.8rem;
+  color: #6366f1;
+  text-decoration: none;
+  word-break: break-all;
+  text-align: right;
+}
+
+.link-github:hover {
+  text-decoration: underline;
+}

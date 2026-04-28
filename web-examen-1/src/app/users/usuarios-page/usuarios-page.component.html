@@ -1,0 +1,40 @@
+<div class="page-wrapper">
+  <!-- Lista -->
+  <section class="lista-section" [class.lista-reducida]="usuarioSeleccionado">
+    <div class="lista-header">
+      <h1>Usuarios</h1>
+      <span class="badge" *ngIf="!cargando">{{ usuarios.length }}</span>
+    </div>
+
+    <div *ngIf="cargando" class="estado-mensaje">
+      <div class="spinner"></div>
+      <span>Cargando usuarios…</span>
+    </div>
+
+    <div *ngIf="error" class="estado-mensaje error">{{ error }}</div>
+
+    <ul class="usuario-list" *ngIf="!cargando && !error">
+      <li
+        *ngFor="let usuario of usuarios"
+        class="usuario-card"
+        [class.seleccionado]="usuarioSeleccionado?.id === usuario.id"
+        (click)="seleccionar(usuario)"
+      >
+        <img [src]="usuario.avatar_url" [alt]="usuario.login" class="avatar" />
+        <div class="info">
+          <span class="login">{{ usuario.login }}</span>
+          <span class="tipo">{{ usuario.type }}</span>
+        </div>
+        <span class="chevron">›</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Detalle -->
+  <section class="detalle-section" *ngIf="usuarioSeleccionado">
+    <app-usuario-detalle
+      [usuario]="usuarioSeleccionado"
+      (cerrar)="cerrarDetalle()"
+    ></app-usuario-detalle>
+  </section>
+</div>

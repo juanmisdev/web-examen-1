@@ -1,0 +1,135 @@
+.page-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: calc(100vh - 60px);
+}
+
+/* ---- Lista ---- */
+.lista-section {
+  flex: 1;
+  transition: flex 0.3s ease;
+}
+
+.lista-section.lista-reducida {
+  max-width: 380px;
+  min-width: 280px;
+  flex: 0 0 340px;
+}
+
+.lista-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.lista-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.badge {
+  background: #eef2ff;
+  color: #6366f1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.estado-mensaje {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #6b7280;
+  font-size: 0.95rem;
+  padding: 1.5rem 0;
+}
+
+.estado-mensaje.error {
+  color: #dc2626;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e5e7eb;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.usuario-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.usuario-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.usuario-card:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  border-color: #c7d2fe;
+}
+
+.usuario-card.seleccionado {
+  border-color: #6366f1;
+  background: #f5f3ff;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.login {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.tipo {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 1px;
+}
+
+.chevron {
+  color: #9ca3af;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* ---- Detalle ---- */
+.detalle-section {
+  flex: 1;
+  min-width: 0;
+}
