@@ -1,0 +1,43 @@
+<div class="detalle-wrapper">
+  <button class="btn-volver" (click)="volver()">← Volver</button>
+
+  <div *ngIf="cargando" class="estado-mensaje">
+    <div class="spinner"></div>
+    <span>Cargando repositorio…</span>
+  </div>
+
+  <div *ngIf="error" class="estado-mensaje error">{{ error }}</div>
+
+  <div *ngIf="repositorio && !cargando" class="detalle-card">
+    <div class="detalle-header">
+      <div class="repo-icon">&#128196;</div>
+      <div>
+        <h2>{{ repositorio.name }}</h2>
+        <p class="desc">{{ repositorio.description }}</p>
+      </div>
+    </div>
+
+    <div class="detalle-fields">
+      <div class="field">
+        <span class="label">Lenguaje</span>
+        <span class="value lang-badge">{{ repositorio.language }}</span>
+      </div>
+      <div class="field">
+        <span class="label">Estrellas</span>
+        <span class="value stars">&#9733; {{ repositorio.stars }}</span>
+      </div>
+      <div class="field">
+        <span class="label">Creado</span>
+        <span class="value">{{ repositorio.createdAt }}</span>
+      </div>
+      <div class="field">
+        <span class="label">ID</span>
+        <span class="value">{{ repositorio.id }}</span>
+      </div>
+      <div class="field">
+        <span class="label">Owner ID</span>
+        <span class="value">{{ repositorio.ownerId }}</span>
+      </div>
+    </div>
+  </div>
+</div>

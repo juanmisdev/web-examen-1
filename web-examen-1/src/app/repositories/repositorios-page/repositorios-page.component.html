@@ -1,0 +1,31 @@
+<div class="page-wrapper">
+  <div class="lista-header">
+    <h1>Repositorios</h1>
+    <span class="badge" *ngIf="!cargando">{{ repositorios.length }}</span>
+  </div>
+
+  <div *ngIf="cargando" class="estado-mensaje">
+    <div class="spinner"></div>
+    <span>Cargando repositorios…</span>
+  </div>
+
+  <div *ngIf="error" class="estado-mensaje error">{{ error }}</div>
+
+  <ul class="repo-list" *ngIf="!cargando && !error">
+    <li
+      *ngFor="let repo of repositorios"
+      class="repo-card"
+      (click)="verDetalle(repo)"
+    >
+      <div class="repo-main">
+        <span class="repo-name">{{ repo.name }}</span>
+        <span class="repo-desc">{{ repo.description }}</span>
+      </div>
+      <div class="repo-meta">
+        <span class="lang-badge">{{ repo.language }}</span>
+        <span class="stars">&#9733; {{ repo.stars }}</span>
+      </div>
+      <span class="chevron">›</span>
+    </li>
+  </ul>
+</div>
