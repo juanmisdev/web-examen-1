@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Repositorio } from '../repositorio.model';
 import { RepositoriosService } from '../repositorios.service';
@@ -17,6 +17,7 @@ export class RepositoriosPageComponent implements OnInit {
   constructor(
     private repositoriosService: RepositoriosService,
     private router: Router,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
@@ -24,10 +25,12 @@ export class RepositoriosPageComponent implements OnInit {
       next: (data) => {
         this.repositorios = data;
         this.cargando = false;
+        this.cdr.detectChanges();
       },
       error: () => {
         this.error = 'No se pudieron cargar los repositorios.';
         this.cargando = false;
+        this.cdr.detectChanges();
       },
     });
   }
