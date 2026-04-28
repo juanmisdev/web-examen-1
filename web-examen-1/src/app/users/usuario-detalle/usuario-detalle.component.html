@@ -6,29 +6,31 @@
 
   <div class="detalle-body">
     <div class="avatar-section">
-      <img [src]="usuario.avatar_url" [alt]="usuario.login" class="avatar-grande" />
-      <span class="tipo-badge" [class.admin]="usuario.site_admin">
-        {{ usuario.site_admin ? 'Admin' : usuario.type }}
+      <img [src]="usuario.avatarUrl" [alt]="usuario.username" class="avatar-grande" />
+      <span class="tipo-badge" [class.admin]="usuario.role === 'admin'">
+        {{ usuario.role }}
       </span>
     </div>
 
     <div class="info-section">
-      <h3 class="nombre">{{ usuario.login }}</h3>
+      <h3 class="nombre">{{ usuario.name }}</h3>
       <p class="id-usuario">ID: {{ usuario.id }}</p>
 
       <div class="campo">
-        <span class="label">Tipo</span>
-        <span class="valor">{{ usuario.type }}</span>
+        <span class="label">Usuario</span>
+        <span class="valor">{{ usuario.username }}</span>
       </div>
       <div class="campo">
-        <span class="label">Administrador del sitio</span>
-        <span class="valor">{{ usuario.site_admin ? 'Sí' : 'No' }}</span>
+        <span class="label">Email</span>
+        <span class="valor">{{ usuario.email }}</span>
       </div>
       <div class="campo">
-        <span class="label">Perfil en GitHub</span>
-        <a [href]="usuario.html_url" target="_blank" rel="noopener" class="link-github">
-          {{ usuario.html_url }}
-        </a>
+        <span class="label">Rol</span>
+        <span class="valor">{{ usuario.role }}</span>
+      </div>
+      <div class="campo">
+        <span class="label">Ubicación</span>
+        <span class="valor">{{ usuario.location }}</span>
       </div>
     </div>
   </div>

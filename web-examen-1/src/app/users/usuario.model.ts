@@ -1,8 +1,10 @@
 export interface Usuario {
-  login: string;
   id: number;
-  avatar_url: string;
-  html_url: string;
-  type: string;
-  site_admin: boolean;
+  username: string;
+  name: string;
+  email: string;
+  avatarUrl: string;
+  role: string;
+  location: string;
+  repoIds: number[];
 }
