@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Repositorio } from '../repositorio.model';
 import { RepositoriosService } from '../repositorios.service';
@@ -18,6 +18,7 @@ export class RepositorioDetalleComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private repositoriosService: RepositoriosService,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
@@ -29,10 +30,12 @@ export class RepositorioDetalleComponent implements OnInit {
           this.error = 'Repositorio no encontrado.';
         }
         this.cargando = false;
+        this.cdr.detectChanges();
       },
       error: () => {
         this.error = 'No se pudo cargar el repositorio.';
         this.cargando = false;
+        this.cdr.detectChanges();
       },
     });
   }
